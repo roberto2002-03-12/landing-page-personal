@@ -1,0 +1,12 @@
+.navbar-landing {
+  background-color: #000C1A;
+  width: 100%;
+}
+
+.navbar-landing .navbar-nav .nav-item .nav-link.scroll-nav {
+  color: white;
+}
+
+.navbar-landing .navbar-nav .nav-item .nav-link.scroll-nav:hover {
+  color: whitesmoke;
+}
