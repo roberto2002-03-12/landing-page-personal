@@ -51,7 +51,7 @@ export const Contacto = () => {
   return (
     <section className='section-contacto'>
       <div className="row">
-        <div className="col-xl-6 form-contacto">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 form-contacto">
           <h2 style={{color: 'white'}}>Contactame</h2>
           <div className="box-contacto">
             <div>
@@ -97,7 +97,7 @@ export const Contacto = () => {
             />
           </div>
         </div>
-        <div className="col-xl-6 info-contacto">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 info-contacto">
           <div className="info-box">
             <h5>Información de contacto</h5>
             <p className='info-contacto-p'>Suelo responder más rápido mediante mensajes de Whatsapp.</p>

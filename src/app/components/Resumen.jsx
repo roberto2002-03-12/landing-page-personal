@@ -7,13 +7,13 @@ export const Resumen = () => {
     <>
       <section className="section-resumen">
         <div className="row">
-          <div className="col-xl-6 section-res-img">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 section-res-img">
             <div>
               <img src={ImageExample} alt="" />
               <h4>Roberto Contreras Gonzales</h4>
             </div>
           </div>
-          <div className="col-xl-6 section-res-text">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 section-res-text">
             <div>
               <span className='globo-res-text'></span>  
               <h4>Resumen de mí</h4>

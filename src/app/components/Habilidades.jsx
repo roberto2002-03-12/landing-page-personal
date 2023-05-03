@@ -11,7 +11,7 @@ export const Habilidades = () => {
   return (
     <section className='seccion-habilidades'>
       <div className="row">
-        <div className="col-xl-6 skills-column-left">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-left">
           <h3>Mis habilidades</h3>
           <div className='skills-column-1'>
             <div className="skill">
@@ -52,7 +52,7 @@ export const Habilidades = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-6 skills-column-right">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-right">
           <h3>Habilidades a futuro</h3>
           <div className="skills-column-2">
             <div className="skill">

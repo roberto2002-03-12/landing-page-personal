@@ -10,3 +10,7 @@
 .navbar-landing .navbar-nav .nav-item .nav-link.scroll-nav:hover {
   color: whitesmoke;
 }
+
+.navbar button.navbar-toggler:hover {
+  color: #A6A6A6;
+}

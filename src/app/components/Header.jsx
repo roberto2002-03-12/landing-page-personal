@@ -5,8 +5,8 @@ export const Header = () => {
   return (
     <header>
       <div className="row">
-        <div className="col-xl-6 presentation">
-          <div>
+        <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 presentation">
+          <div className='content-presentation'>
             <div className="header-box-1">
               <p>Hola, soy</p>
             </div>
@@ -18,16 +18,15 @@ export const Header = () => {
               <h4>Carrera diseño y desarrollo de software</h4>
             </div>
             <div className="header-box-2">
-
+              <button className='button-header'>
+                <a href="">
+                  Descargar CV
+                </a>
+              </button>
             </div>
-            <button className='button-header'>
-              <a href="">
-                Descargar CV
-              </a>
-            </button>
           </div>
         </div>
-        <div className="col-xl-6 image">
+        <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-none d-lg-flex image d-flex justify-content-center align-content-center">
           <img src={ProgramadorLogo} alt="" />
         </div>
       </div>
