@@ -1,3 +1,4 @@
+import { useForm } from '../../hooks'
 import { TextField, Button, colors, styled } from '@mui/material';
 import '../styles/ContactoStyle.css';
 import EmailIcon from '@mui/icons-material/Email';
@@ -46,6 +47,24 @@ const CustomTextFieldLong = styled(TextField)({
     },
   },
 });
+
+const nombres = Joi.string().max(100);
+const apellidos = Joi.string().max(100);
+const email = Joi.string().max(105);
+const mensaje = Joi.string().max(255);
+const codigoCaptcha = Joi.string();
+
+const inputs = {
+  nombres: '',
+  apellidos: '',
+  email: '',
+  mensaje: ''
+}
+/*
+const inputsValidation = {
+  nombres: [(str) => ]
+}
+*/
 
 export const Contacto = () => {
   return (
