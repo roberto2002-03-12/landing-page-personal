@@ -1,11 +1,21 @@
+import { useState, useEffect, memo } from 'react';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import '../styles/PortafolioStyle.css';
 import { ImageList, ImageListItem, ImageListItemBar, ListSubheader, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import PokeDexImg from '../img/pokedex.svg';
 import GestionApiImg from '../img/gestion_usuario_api.svg';
 import EjerciciosImg from '../img/ejercicios_js.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-export const Portafolio = () => {
+export const Portafolio = memo(() => {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+    setIsWideScreen(true);
+  }, []);
+
   const theme = useTheme();
   const mediaQuery = useMediaQuery(theme.breakpoints.down('md'))
 
@@ -21,6 +31,8 @@ export const Portafolio = () => {
           }
         }} 
         cols={mediaQuery ? 1 : 3}
+        data-aos={isWideScreen ? 'fade-up' : '' }
+        data-aos-duration="2000"
       >
         <ImageListItem key="Subheader" cols={mediaQuery ? 1 : 3}>
           <ListSubheader component="div" 
@@ -76,4 +88,4 @@ export const Portafolio = () => {
       </ImageList>
     </section>
   )
-}
+});

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect, memo } from 'react';
 import ReactLogo from '../img/react.svg';
 import NodeLogo from '../img/node.svg';
 import JavaScriptLogo from '../img/javascript.svg';
@@ -6,12 +6,24 @@ import MySqlLogo from '../img/mysql.svg';
 import TypescriptLogo from '../img/typescript.svg';
 import ApiLogo from '../img/api.svg';
 import '../styles/HabilidadesStyle.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-export const Habilidades = () => {
+export const Habilidades = memo(() => {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+    setIsWideScreen(true);
+  }, []);
+
   return (
     <section className='seccion-habilidades'>
       <div className="row">
-        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-left">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-left"
+          data-aos={isWideScreen ? 'zoom-in-right' : '' }
+          data-aos-duration="1000"
+        >
           <h3>Mis habilidades</h3>
           <div className='skills-column-1'>
             <div className="skill">
@@ -52,7 +64,10 @@ export const Habilidades = () => {
             </div>
           </div>
         </div>
-        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-right">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-right"
+          data-aos={isWideScreen ? 'zoom-in-left' : '' }
+          data-aos-duration="1000"
+        >
           <h3>Habilidades a futuro</h3>
           <div className="skills-column-2">
             <div className="skill">
@@ -78,4 +93,4 @@ export const Habilidades = () => {
       </div>
     </section>
   )
-}
+});

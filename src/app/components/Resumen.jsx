@@ -1,20 +1,35 @@
-import React from 'react'
+import { useState, useEffect, memo } from 'react';
 import '../styles/ResumenStyle.css';
 import ImageExample from '../img/perro-sentado.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-export const Resumen = () => {
+export const Resumen = memo(() => {
+  const [isWideScreen, setIsWideScreen] = useState(false);
+
+  useEffect(() => {
+    AOS.init();
+    setIsWideScreen(true);
+  }, []);
+
   return (
     <>
       <section className="section-resumen">
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 section-res-img">
-            <div>
+            <div
+              data-aos={isWideScreen ? 'fade-right' : '' }
+              data-aos-duration="1000"
+            >
               <img src={ImageExample} alt="" />
               <h4>Roberto Contreras Gonzales</h4>
             </div>
           </div>
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 section-res-text">
-            <div>
+            <div
+              data-aos={isWideScreen ? 'fade-left' : '' }
+              data-aos-duration="1000"
+            >
               <span className='globo-res-text'></span>  
               <h4>Resumen de mí</h4>
               <p>
@@ -29,4 +44,4 @@ export const Resumen = () => {
       </section>
     </>
   )
-}
+});

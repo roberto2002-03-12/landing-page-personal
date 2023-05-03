@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import '../styles/NavBarStyle.css'
 
-export const NavBar = () => {
+export const NavBar = memo(() => {
   return (
     <nav className="navbar navbar-expand-lg navbar-landing fixed-top">
       <div className="container-fluid">
@@ -27,4 +28,4 @@ export const NavBar = () => {
       </div>
     </nav>
   )
-}
+});

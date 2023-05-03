@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import '../styles/HeaderStyle.css';
 import ProgramadorLogo from '../img/programador-logo.svg'
 
-export const Header = () => {
+export const Header = memo(() => {
   return (
     <header>
       <div className="row">
@@ -32,4 +33,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+});
