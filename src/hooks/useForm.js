@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react'
 
-export const useForm = () => {
+export const useForm = (initialForm = {}, formValidations = {}) => {
   const [formState, setFormState] = useState(initialForm);
   const [formValidation, setFormValidation] = useState({});
 

@@ -1,8 +1,12 @@
-import { useForm } from '../../hooks'
-import { TextField, Button, colors, styled } from '@mui/material';
+import { useForm, useEmailApi } from '../../hooks'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { TextField, Button, styled } from '@mui/material';
 import '../styles/ContactoStyle.css';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
+import { Cargando } from './';
 
 const CustomTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
@@ -48,73 +52,162 @@ const CustomTextFieldLong = styled(TextField)({
   },
 });
 
-const nombres = Joi.string().max(100);
-const apellidos = Joi.string().max(100);
-const email = Joi.string().max(105);
-const mensaje = Joi.string().max(255);
-const codigoCaptcha = Joi.string();
-
 const inputs = {
   nombres: '',
   apellidos: '',
   email: '',
   mensaje: ''
 }
-/*
+
 const inputsValidation = {
-  nombres: [(str) => ]
+  nombres: [(str) => str.length >= 3, 'Nombre no valido'],
+  apellidos: [(str) => str.length >= 3, 'Apellido no valido'],
+  email: [(str) => str.includes('@'), 'Email no valido'],
+  mensaje: [(str) => str.length >= 10, 'El mensaje debe tener más de 10 caracteres y menos de 255 caracteres']
 }
-*/
 
 export const Contacto = () => {
+  const { status } = useSelector(state => state.status);
+  const { subirFormulario } = useEmailApi();
+
+  const [formSubmited, setFormSubmited] = useState(false);
+  const [recaptcha, setRecaptcha] = useState('');
+
+  const {
+    nombres,
+    apellidos,
+    email,
+    mensaje,
+
+    nombresValid,
+    apellidosValid,
+    emailValid,
+    mensajeValid,
+
+    formState,
+    onInputChange,
+    onResetForm,
+    isFormValid
+  } = useForm(inputs, inputsValidation);
+
+  const onChangeCaptcha = (token) => {
+    setRecaptcha(token);
+  }
+
+  const onSubmitMessage = (event) => {
+    event.preventDefault();
+    setFormSubmited(true);
+    if (!isFormValid) return;
+    if (recaptcha == '') return;
+    subirFormulario(formState, recaptcha);
+    setFormSubmited(false);
+    onResetForm();
+  }
+
   return (
     <section className='section-contacto'>
       <div className="row">
         <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 form-contacto">
-          <h2 style={{color: 'white'}}>Contactame</h2>
-          <div className="box-contacto">
-            <div>
-              <CustomTextField 
-                variant='outlined'
-                label='Nombres'
-                sx={{marginTop: '15px', marginRight: '15px',
-                marginBottom: '20px'}}
-                InputLabelProps={{
-                  style: {color: '#7A7A7A'}
-                }}
-              />
-              <CustomTextField 
-                variant='outlined'
-                label='Apellidos'
-                sx={{marginTop: '15px'}}
-                InputLabelProps={{
-                  style: {color: '#7A7A7A'}
-                }}
-              />
-            </div>
-            <CustomTextFieldLong 
-              variant='outlined'
-              label='Email'
-              sx={{
-                marginBottom: '20px'
-              }}
-              InputLabelProps={{
-                style: {color: '#7A7A7A'}
-              }}
-            />
-            <CustomTextFieldLong 
-              variant='outlined'
-              label='Mensaje'
-              multiline
-              rows={5}
-              InputLabelProps={{
-                style: {color: '#7A7A7A'}
-              }}
-              inputProps={{
-                maxLength: 250
-              }}
-            />
-          </div>
+          <h2 style={{color: 'white', marginBottom: '20px'}}>Contactame</h2>
+          {
+            (status === 'sending' ? (
+              <Cargando />
+            ) : (
+              <div className="box-contacto">
+                <form onSubmit={ onSubmitMessage }>
+                <div>
+                  <CustomTextField 
+                    variant='outlined'
+                    label='Nombres'
+                    sx={{marginTop: '15px', marginRight: '15px',
+                    marginBottom: '20px'}}
+                    InputLabelProps={{
+                      style: {color: '#7A7A7A'}
+                    }}
+                    inputProps={{
+                      maxLength: 100
+                    }}
+                    value={ nombres }
+                    onChange={ onInputChange }
+                    name='nombres'
+                    error={ !!nombresValid && formSubmited }
+                    helperText={ !!nombresValid && formSubmited ? nombresValid : '' }
+                  />
+                  <CustomTextField 
+                    variant='outlined'
+                    label='Apellidos'
+                    sx={{marginTop: '15px'}}
+                    InputLabelProps={{
+                      style: {color: '#7A7A7A'}
+                    }}
+                    inputProps={{
+                      maxLength: 100
+                    }}
+                    value={ apellidos }
+                    onChange={ onInputChange }
+                    name='apellidos'
+                    error={ !!apellidosValid && formSubmited }
+                    helperText={ !!apellidosValid && formSubmited ? apellidosValid : '' }
+                  />
+                </div>
+                <CustomTextFieldLong 
+                  variant='outlined'
+                  label='Email'
+                  sx={{
+                    marginBottom: '20px'
+                  }}
+                  InputLabelProps={{
+                    style: {color: '#7A7A7A'}
+                  }}
+                  inputProps={{
+                    maxLength: 105
+                  }}
+                  value={ email }
+                  onChange={ onInputChange }
+                  name='email'
+                  error={ !!emailValid && formSubmited }
+                  helperText={ !!emailValid && formSubmited ? emailValid : '' }
+                />
+                <CustomTextFieldLong 
+                  variant='outlined'
+                  label='Mensaje'
+                  multiline
+                  rows={5}
+                  InputLabelProps={{
+                    style: {color: '#7A7A7A'}
+                  }}
+                  inputProps={{
+                    maxLength: 255
+                  }}
+                  value={ mensaje }
+                  onChange={ onInputChange }
+                  name='mensaje'
+                  error={ !!mensajeValid && formSubmited }
+                  helperText={ !!mensajeValid && formSubmited ? mensajeValid : '' }
+                />
+                <ReCAPTCHA
+                  sitekey={'6Lc9wN0lAAAAAL9UG55KIDk0spYVkSjXXhUAn_qk'}
+                  onChange={onChangeCaptcha}
+                  size='normal'
+                  style={{paddingTop: '20px'}}
+                />
+                <div className='button-container'>
+                  <Button
+                    variant='outlined'
+                    sx={{
+                      borderRadius: '20px', 
+                      width: '300px',
+                    }}
+                    type='submit'
+                  >
+                    Enviar
+                  </Button>
+                </div>
+                </form>
+              </div>
+            )
+          )}
+          
         </div>
         <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 info-contacto">
           <div className="info-box">
