@@ -5,3 +5,4 @@ export * from './Portafolio';
 export * from './Resumen';
 export * from './NavBar';
 export * from './Cargando';
+export * from './Footer';

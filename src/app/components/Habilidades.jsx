@@ -18,7 +18,7 @@ export const Habilidades = memo(() => {
   }, []);
 
   return (
-    <section className='seccion-habilidades'>
+    <section className='seccion-habilidades' id="seccion-habilidades">
       <div className="row">
         <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12 skills-column-left"
           data-aos={isWideScreen ? 'zoom-in-right' : '' }

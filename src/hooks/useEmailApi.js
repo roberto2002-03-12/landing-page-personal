@@ -15,7 +15,7 @@ export const useEmailApi = () => {
     };
 
     try {
-      await landingPageApi.post('/mensajes/', newObj);
+      await landingPageApi.post('/mensajes', newObj);
       Swal.fire('Mensaje enviado', 'Gracias por mostrar interes, trataré de responderte lo más pronto posible.', 'success');
       setTimeout(() => {
         dispatch(onClear());

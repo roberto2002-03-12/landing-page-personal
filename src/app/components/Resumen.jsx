@@ -14,7 +14,7 @@ export const Resumen = memo(() => {
 
   return (
     <>
-      <section className="section-resumen">
+      <section className="section-resumen" id="section-resumen">
         <div className="row">
           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 section-res-img">
             <div

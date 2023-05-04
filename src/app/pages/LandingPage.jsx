@@ -1,4 +1,4 @@
-import { NavBar, Header, Resumen, Habilidades, Portafolio, Contacto } from '../components'
+import { NavBar, Header, Resumen, Habilidades, Portafolio, Contacto, Footer } from '../components'
 import React from 'react';
 import '../styles/LandingPageStyle.css';
 
@@ -11,6 +11,7 @@ const LandingPage = () => {
       <Habilidades />
       <Portafolio />
       <Contacto />
+      <Footer />
     </>
   )
 }

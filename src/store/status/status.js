@@ -13,7 +13,7 @@ export const statusSlice = createSlice({
       state.status = 'sent'
     },
     onClear: (state) => {
-      state.status = undefined;
+      state.status = '';
     }
   }
 });

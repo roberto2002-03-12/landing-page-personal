@@ -20,7 +20,7 @@ export const Portafolio = memo(() => {
   const mediaQuery = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <section className='section-proyectos'>
+    <section className='section-proyectos' id="section-proyectos">
       <ImageList 
         sx={{
           width: '900px', 
