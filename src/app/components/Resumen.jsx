@@ -1,6 +1,6 @@
 import { useState, useEffect, memo } from 'react';
 import '../styles/ResumenStyle.css';
-import ImageExample from '../img/perro-sentado.jpg';
+import ImageYo from '../img/yo.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -21,7 +21,7 @@ export const Resumen = memo(() => {
               data-aos={isWideScreen ? 'fade-right' : '' }
               data-aos-duration="1000"
             >
-              <img src={ImageExample} alt="" />
+              <img src={ImageYo} alt="" />
               <h4>Roberto Contreras Gonzales</h4>
             </div>
           </div>
@@ -33,10 +33,10 @@ export const Resumen = memo(() => {
               <span className='globo-res-text'></span>  
               <h4>Resumen de mí</h4>
               <p>
-                Nací en el año 2002. Me gusta la programación porque no hay tanto papeleo y puedo dar rienda 
-                suelta a mi creatividad. Estudié una carrera técnica de 3 años para tener una base de la 
-                programación para luego seguir aprendiendo por mi cuenta. Además, hablo dos idiomas, español 
-                e inglés, lo que me permite comunicarme aún más.
+                Nací en el año 2002. Me gusta la programación porque no hay tanto papeleo y hay varias maneras de solucionar un problema. 
+                Estudié una carrera técnica de 3 años en el instituto Tecsup para tener una base de la programación y así seguir aprendiendo 
+                por mi cuenta o quizás en algun futuro seguir una carrera universitaria. 
+                Actualmente estoy estudiando inglés y el lenguaje Typescript lo estudio en mis tiempos libres.
               </p>
             </div>
           </div>
