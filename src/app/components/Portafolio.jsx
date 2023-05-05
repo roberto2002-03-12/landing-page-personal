@@ -1,10 +1,12 @@
 import { useState, useEffect, memo } from 'react';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import '../styles/PortafolioStyle.css';
 import { ImageList, ImageListItem, ImageListItemBar, ListSubheader, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import PokeDexImg from '../img/pokedex.svg';
 import GestionApiImg from '../img/gestion_usuario_api.svg';
 import EjerciciosImg from '../img/ejercicios_js.svg';
+import CalendarImg from '../img/calendar_app.svg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -52,8 +54,11 @@ export const Portafolio = memo(() => {
             title='Pokedex'
             actionIcon={
               <IconButton sx={{color: 'white'}}>
-                <a href='https://github.com/roberto2002-03-12/pokedex-react' target='_blank'>
+                <a href='https://64545c1b312e513a7b24f1c9--merry-sawine-776fbb.netlify.app/' target='_blank'>
                   <TravelExploreIcon sx={{color: 'white'}} />
+                </a>
+                <a href="https://github.com/roberto2002-03-12/pokedex-react" target='_blank'>
+                  <GitHubIcon sx={{color: 'white'}}/>
                 </a>
               </IconButton>
             }
@@ -66,7 +71,7 @@ export const Portafolio = memo(() => {
             actionIcon={
               <IconButton sx={{color: 'white'}}>
                 <a href="https://github.com/roberto2002-03-12/gestion-usuario-node-v2/tree/main" target='_blank'>
-                  <TravelExploreIcon sx={{color: 'white'}} />
+                  <GitHubIcon sx={{color: 'white'}} />
                 </a>
               </IconButton>
             }
@@ -79,7 +84,23 @@ export const Portafolio = memo(() => {
             actionIcon={
               <IconButton sx={{color: 'white'}}>
                 <a href="https://github.com/roberto2002-03-12/ejercicios-javascript" target='_blank'>
+                  <GitHubIcon sx={{color: 'white'}} />
+                </a>
+              </IconButton>
+            }
+          />
+        </ImageListItem>
+        <ImageListItem>
+          <img src={CalendarImg} alt="" className='image-project' />
+          <ImageListItemBar
+            title='Calendar App'
+            actionIcon={
+              <IconButton sx={{color: 'white'}}>
+                <a href="https://64545ad498bfb33acf262b69--storied-daffodil-d2a2f0.netlify.app/" target='_blank'>
                   <TravelExploreIcon sx={{color: 'white'}} />
+                </a>
+                <a href="https://github.com/roberto2002-03-12/13-react-calendar-mern" target='_blank'>
+                  <GitHubIcon sx={{color: 'white'}}/>
                 </a>
               </IconButton>
             }
