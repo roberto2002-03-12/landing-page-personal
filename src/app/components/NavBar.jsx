@@ -18,12 +18,12 @@ export const NavBar = memo(() => {
               </ScrollIntoView>
             </li>
             <li className="nav-item">
-              <ScrollIntoView selector='#seccion-habilidades'>
+              <ScrollIntoView selector='#skills-section'>
                 <a className="nav-link scroll-nav">Habilidades</a>
               </ScrollIntoView> 
             </li>
             <li className="nav-item">
-              <ScrollIntoView selector='#section-proyectos'>
+              <ScrollIntoView selector='#portafolio-carosel-container'>
                 <a className="nav-link scroll-nav">Portafolio</a>
               </ScrollIntoView>
             </li>

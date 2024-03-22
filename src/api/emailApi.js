@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const landingPageApi = axios.create({
-  baseURL: 'https://landing-page-profesional-api-erfcg.onrender.com/api/landing-robertocg/v1'
+  baseURL: 'https://ilzro39yk0.execute-api.sa-east-1.amazonaws.com'
 });
 
 export default landingPageApi;

@@ -35,8 +35,8 @@ export const Resumen = memo(() => {
               <p>
                 Nací en el año 2002. Me gusta la programación porque no hay tanto papeleo y hay varias maneras de solucionar un problema. 
                 Estudié una carrera técnica de 3 años en el instituto Tecsup para tener una base de la programación y así seguir aprendiendo 
-                por mi cuenta o quizás en algun futuro seguir una carrera universitaria. 
-                Actualmente estoy estudiando inglés y el lenguaje Typescript lo estudio en mis tiempos libres.
+                por mi cuenta, actualmente estoy empezando a estudiar Ingenieria de sistemas en la universidad Esan los fines de semana. 
+                En mis tiempos libres siempre busco más conocimiento, por el momento aspiro a obtener el certifico cloud practioner de AWS.
               </p>
             </div>
           </div>

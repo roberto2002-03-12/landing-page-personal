@@ -134,7 +134,9 @@
 
 @media (max-width: 576px) {
   .section-resumen {
-    height: 800px;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
 
   .section-res-img {

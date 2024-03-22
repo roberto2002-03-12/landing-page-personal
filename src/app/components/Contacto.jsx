@@ -186,7 +186,7 @@ export const Contacto = () => {
                   helperText={ !!mensajeValid && formSubmited ? mensajeValid : '' }
                 />
                 <ReCAPTCHA
-                  sitekey={'6Lc9wN0lAAAAAL9UG55KIDk0spYVkSjXXhUAn_qk'}
+                  sitekey={'6Lda06ApAAAAAPVuMaVJiuwr5L2XnO4GiElbt_wl'}
                   onChange={onChangeCaptcha}
                   size='normal'
                   style={{paddingTop: '20px'}}
@@ -215,7 +215,7 @@ export const Contacto = () => {
             <p className='info-contacto-p'>Suelo responder más rápido mediante mensajes de Whatsapp.</p>
             <div className='info-box-data'>
               <EmailIcon sx={{marginRight: '5px', color: 'white'}}/>
-              <p>Email: emilio.contreras@tecsup.edu.pe robertog-18@hotmail.com</p>
+              <p>Email: emilio.contreras@tecsup.edu.pe robertog-18@hotmail.com robertocg21dev@gmail.com</p>
             </div>
             <div className="info-box-data">
               <PhoneAndroidIcon sx={{marginRight: '5px', color: 'white'}}/>

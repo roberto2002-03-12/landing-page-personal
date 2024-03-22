@@ -22,8 +22,9 @@
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^2.1.0",
     "react-redux": "^8.0.5",
-    "react-responsive-carousel": "^3.2.23",
     "react-scroll-into-view": "^1.12.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.3"
   },
   "devDependencies": {
