@@ -4,6 +4,7 @@ import UserManagementImg from '../img/user_management.svg';
 import InvoiceFacil from '../img/infoice_facil_landing.svg';
 import ElBuenPastorImg from '../img/el_buen_pastor.svg';
 import PokedexImg from '../img/pokedex.svg';
+import ReactStoreImg from '../img/react-store-1.svg';
 // imagenes pequeñas
 import JavaScriptImg from '../img/javascript_logo.svg';
 import ReactImg from '../img/react_logo.svg';
@@ -14,6 +15,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DockerIcon from '../img/docker-mark-white.svg';
+import TailwindIcon from '../img/tailwind-css.svg'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/PortafolioCarrusel.css';
@@ -174,6 +176,53 @@ export const PortafolioCarrusel = () => {
                   listar y filtrar reclamos, mensajes, quejas, y también la creación de blogs junto con la creación de categorias, para ver
                   sus funcionalidades les recomiendo ver el vídeo de youtube debido a que la muestra que estoy mostrando en la web solo es
                   de la landing page no el lado administrativo. Fue uno de mis proyectos que realice durante mis practicas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='carousel-content'>
+          <h4 className="carousel-title">React Store #1</h4>
+          <div className="row">
+            <div className='carousel-image-box col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
+              <img src={ReactStoreImg} alt="Pokedex" loading='lazy' />
+            </div>
+            <div className='carousel-info-box col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
+              <h4>React Store #1</h4>
+              <div className="carousel-info-extras">
+
+                <div className="carousel-links">
+                  <p>Links:</p>
+                  <a href="https://react-store-1.netlify.app/" target="_blank">
+                    <TravelExploreIcon style={iconStyle} />
+                  </a>
+                  <a href="https://github.com/roberto2002-03-12/react-store-ts-1" target="_blank">
+                    <GitHubIcon style={iconStyle} />
+                  </a>
+                </div>
+                
+                <div className="carousel-lenguages">
+                  <p>Hecho con: </p>
+                  <div className="carousel-lenguage-box">
+                    <img src={TypeScriptImg} alt="" style={smallImgStyle}/>
+                    <span>TypeScript</span>
+                  </div>
+                  <div className="carousel-lenguage-box">
+                    <img src={ReactImg} alt="" style={smallImgStyle} />
+                    <span>React</span>
+                  </div>
+                  <div className="carousel-lenguage-box">
+                    <img src={TailwindIcon} alt="" style={smallImgStyle} />
+                    <span>Tailwindcss</span>
+                  </div>
+                </div>
+
+              </div>
+              <div className="carousel-text">
+                <p>
+                  Pequeño proyecto de tienda hecho con el proposito de entender las bases de la libreria Tailwindcss en React, pudiendo comprender
+                  mediante la practica cómo realizar los estilos y cómo hacerlo responsive solamente usando Tailwindcss. Se trabajo mediante la api
+                  gratis de uso llamada Fake Store api.
                 </p>
               </div>
             </div>
