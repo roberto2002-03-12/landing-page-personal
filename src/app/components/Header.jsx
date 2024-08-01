@@ -20,7 +20,7 @@ export const Header = memo(() => {
             </div>
             <div className="header-box-2">
               <button className='button-header'>
-                <a href="https://drive.google.com/file/d/1DNDk6LasvrE8cwa5opaXpyZ_pCIJHLUz/view" target='_blank'>
+                <a href="https://drive.google.com/file/d/1n3Tu-HfPRQXyXHKiaZzdKHakO1LzQp_V/view?usp=sharing" target='_blank'>
                   Descargar CV
                 </a>
               </button>
